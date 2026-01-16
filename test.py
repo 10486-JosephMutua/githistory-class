@@ -1,4 +1,7 @@
 from langchain_groq import ChatGroq
-GROQ_API_KEY = "gsk_lBMCdqaoYbmffCuBFY8MSEBm86dODWkWOvPuBDI4sX"
+from dotenv import load_dotenv
+load_dotenv()
+
+GROQ_API_KEY = os.getenv("GROQ_API_KEY")
 llm = ChatGroq(llm="gpt-4o", api_key=GROQ_API_KEY)
-llm.invole("hi")
+llm.invoke("hi")
